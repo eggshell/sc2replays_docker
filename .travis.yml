@@ -13,5 +13,6 @@ matrix:
 
 env:
   - TEST_RUN="docker build -qt eggshell/sc2_base sc2_base/"
+  - TEST_RUN="docker build -qt eggshell/replay_processing replay_processing/"
 
 script: "$TEST_RUN"
