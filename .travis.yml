@@ -1,0 +1,17 @@
+---
+sudo: required
+dist: trusty
+language: python
+python: "2.7"
+cache: pip
+
+services:
+  - docker
+
+matrix:
+  - fast_finish: true
+
+env:
+  - TEST_RUN="docker build -qt eggshell/sc2_base sc2_base/"
+
+script: "$TEST_RUN"
