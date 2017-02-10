@@ -2,15 +2,30 @@
 sc2replays_docker
 =================
 
-Collection of dockerfiles for running `timings_graphing <https://github.com/nibalizer/timings_graphing>`_ and `replay_processing <https://github.com/nibalizer/replay_processing>`_ for StarCraft 2 replay analytics in containers.
+Dockerfiles and scripts to run StarCraft2 replay processing.
 
 Usage
 =====
 
 1. Pull the image from dockerhub::
 
-    $ docker pull eggshell/timings_graphing
+    $ docker pull eggshell/sc2_util
     $ docker pull eggshell/replay_processing
+
+2. Create a replays volume and utility container by running :code:`run.sh`.
+
+3. Watch the utility container output::
+
+    $ docker attach sc2_util
+
+4. Feed the utility container a replay file::
+
+    $ docker cp /path/to/your/replay.SC2Replay
+
+  - A :code:`replay_processing` container is automatically created on your host machine. You can watch the replay processing in your terminal window that is running :code:`docker attach`.
+
+5. Cleanup by running :code:`destroy.sh`.
+
 
 Support
 =======
