@@ -12,8 +12,7 @@ matrix:
   - fast_finish: true
 
 env:
-  - TEST_RUN="docker build -qt eggshell/sc2_base sc2_base/"
   - TEST_RUN="docker build -qt eggshell/replay_processing replay_processing/"
-  - TEST_RUN="cd util && docker build -qt eggshell/util util"
+  - TEST_RUN="cd sc2_util && docker build -qt eggshell/sc2_util sc2_util"
 
 script: "$TEST_RUN"
