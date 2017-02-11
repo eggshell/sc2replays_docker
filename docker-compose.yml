@@ -1,0 +1,13 @@
+version: "2"
+
+services:
+  sc2_util:
+    image: eggshell/sc2_util
+    container_name: sc2_util
+    volumes:
+      - replays:/replays
+      - /var/run/docker.sock:/var/run/docker.sock
+
+volumes:
+  replays:
+    external: true

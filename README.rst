@@ -7,25 +7,23 @@ Dockerfiles and scripts to run StarCraft2 replay processing.
 Usage
 =====
 
-1. Pull the image from dockerhub::
+1. Pull the images, create a replays host volume and run a utility container with::
 
-    $ docker pull eggshell/sc2_util
-    $ docker pull eggshell/replay_processing
+    $ ./run.sh
 
-2. Create a replays volume and utility container by running :code:`run.sh`.
-
-3. Watch the utility container output::
+2. Watch the utility container output in another terminal::
 
     $ docker attach sc2_util
 
-4. Feed the utility container a replay file::
+3. Feed the utility container a replay file::
 
     $ docker cp /path/to/your/replay.SC2Replay
 
   - A :code:`replay_processing` container is automatically created on your host machine. You can watch the replay processing in your terminal window that is running :code:`docker attach`.
 
-5. Cleanup by running :code:`destroy.sh`.
+4. Stop the utility container, delete it and get rid of the replays host volume with::
 
+    $ ./destroy.sh
 
 Support
 =======
