@@ -14,8 +14,8 @@ matrix:
   - fast_finish: true
 
 env:
-  - TEST_RUN="docker build -qt eggshell/replay_processing replay_processing/"
-  - TEST_RUN="cd sc2_util && docker build -qt eggshell/sc2_util sc2_util"
+  - TEST_RUN="tests/build_replay_processing.sh"
+  - TEST_RUN="tests/build_sc2_util.sh"
   - TEST_RUN="tests/markdownlint-cli-test.sh"
 
 install:
