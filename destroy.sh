@@ -1,4 +1,4 @@
 #!/bin/bash
 
-docker stop sc2_util && docker rm sc2_util
+docker stop $(docker ps -q) && docker rm $(docker ps -aq)
 docker volume rm replays
